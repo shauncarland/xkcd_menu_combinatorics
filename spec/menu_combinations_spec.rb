@@ -3,18 +3,13 @@ require 'tempfile'
 
 describe MenuCombinations do
   describe "#find_combinations" do
-    let(:menu_combination) { MenuCombinations.new("foo") }
     let(:menu_items) { { 'foo' => 1, 'bar' => 2, 'buzz' => 3 } }
     let(:target_price) { 4 }
 
     before(:each) do
       allow_any_instance_of(MenuCombinations).to receive(:parse_file)
-      menu_combination.instance_variable_set(:@menu_items, menu_items)
-      menu_combination.instance_variable_set(:@target_price, target_price)
-
-      # allow_any_instance_of(MenuCombinations).to receive
-      # allow_any_instance_of(MenuCombinations).to receive(:menu_items).and_return({ 'foo' => 1, 'bar' => 2, 'buzz' => 3 })
-      # allow_any_instance_of(MenuCombinations).to receive(:target_price).and_return(4)
+      allow_any_instance_of(MenuCombinations).instance_variable_set(:@menu_items, menu_items)
+      allow_any_instance_of(MenuCombinations).instance_variable_set(:@target_price, target_price)
     end
 
     it "returns the combinations" do
@@ -24,6 +19,9 @@ describe MenuCombinations do
         ['bar','bar'],
         ['foo','buzz']
       ]
+
+      menu_combination = MenuCombinations.new("foo")
+      expect(menu_combination.target_price).to eq(4)
       expect(menu_combination.item_combinations).to eq(combinations)
     end
   end
