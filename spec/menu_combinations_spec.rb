@@ -41,22 +41,5 @@ FILE_DATA
         )
       end
     end
-    # describe "when a bad file" do
-    #   l
-    # end
-  # end
-  # describe '#find_combinations' do
-  #   describe "when there are multiple menu items" do
-  #     let(:menu_prices) { [1,2,3] }
-  #     let(:target_price) { 4 }
-  #     let(:menu) { Menu.new(menu_prices: menu_prices, target_price: target_price) }
-  #
-  #     it "returns the correct combinations to hit the target price" do
-  #       expect(menu.find_combinations).to eq(5)
-  #     end
-  #   end
-    # it 'test' do
-    #   expect(1).to eq(2)
-    # end
   end
 end
