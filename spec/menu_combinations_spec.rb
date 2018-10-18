@@ -25,11 +25,7 @@ describe MenuCombinations do
       expect(menu_combination.item_combinations).to eq(combinations)
     end
   end
-
-  # For example, for N = 4 and S = {1,2,3}, there are four solutions: {1,1,1,1},{1,1,2},{2,2},{1,3}. So output should be 4. For N = 10 and S = {2, 5, 3, 6}, there are five solutions: {2,2,2,2,2}, {2,2,3,3}, {2,2,6}, {2,3,5} and {5,5}. So the output should be 5.
-
-
-
+  
   describe "#parse_file" do
     describe 'when the file is formatted correctly' do
       let(:file_name) { "menu" }
