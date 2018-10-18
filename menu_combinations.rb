@@ -30,4 +30,3 @@ class MenuCombinations
   end
   private :parse_file
 end
-menu = MenuCombinations.new("test_menu.txt")
