@@ -1,5 +1,5 @@
 class MenuCombinations
-  attr_reader :target_price, :menu_items
+  attr_reader :target_price, :menu_items, :item_combinations
 
   def self.call(file_path)
     new(file_path).call
@@ -8,7 +8,13 @@ class MenuCombinations
   def initialize(file_path)
     @file_path = file_path
     parse_file
+    find_combinations
   end
+
+  def find_combinations
+
+  end
+  private :find_combinations
 
   def parse_file
     file = File.open(@file_path)
