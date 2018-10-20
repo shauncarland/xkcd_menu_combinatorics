@@ -1,5 +1,5 @@
 class MenuCombinations
-  attr_reader :target_price, :menu_items, :item_combinations
+  attr_reader :item_combinations
 
   def self.call(file_path)
     new(file_path).call
