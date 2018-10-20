@@ -15,7 +15,8 @@ FILE_DATA
     end
 
     before(:each) do
-      allow(File).to receive(:open).with(file_name).and_return(StringIO.new(file_data))
+      allow(File).to receive(:open).with(file_name).
+        and_return(StringIO.new(file_data))
     end
 
     let(:menu_combinations) { MenuCombinations.new(file_name) }
