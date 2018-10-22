@@ -10,6 +10,11 @@ class MenuCombinations
     @item_combinations = []
     parse_file
     find_combinations(@target_price, [])
+
+
+    if @item_combinations.empty?
+      @item_combinations = "No combinations of menu items were found!"
+    end
   end
 
   private
