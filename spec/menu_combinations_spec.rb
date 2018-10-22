@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'tempfile'
 
 describe MenuCombinations do
   context "when a valid file is passed in" do

@@ -10,19 +10,13 @@ class MenuCombinations
     @item_combinations = []
     parse_file
     find_combinations(@target_price, [])
-    remove_duplicate_combinations
   end
 
   private
 
-  def remove_duplicate_combinations
-    @item_combinations.each { |item_combination| item_combination.sort! }
-    @item_combinations = @item_combinations.uniq
-  end
-
   def find_combinations(current_price, items_used)
-     if current_price == 0
-       @item_combinations << items_used
+    if current_price == 0 && !@item_combinations.include?(items_used.sort)
+      @item_combinations << items_used.sort
      elsif current_price < 0
        return
      else
