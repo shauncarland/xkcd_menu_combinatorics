@@ -1,8 +1,9 @@
 module MenuCombinatorics
   def self.call(file_path)
     parsed_file = FileParser.new(file_path)
-    MenuCombinations.new(parsed_file.menu_items, parsed_file.target_price).item_combinations
-    # CombinatoricsGenerator.call(parsed_file.menu_items, parsed_file.target_price)
+
+    MenuCombinations.new(parsed_file.menu_items, parsed_file.target_price)
+      .item_combinations
   end
 
   class MenuCombinations
@@ -50,7 +51,7 @@ module MenuCombinatorics
           @target_price = line.to_f
         else
           menu_item = line.split(",")
-          item = menu_item.first.gsub(" ", "_")
+          item = menu_item.first
           price = menu_item.last.to_f
 
           @menu_items[item] = price
