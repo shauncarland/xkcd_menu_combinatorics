@@ -14,7 +14,7 @@ module MenuCombinatorics
       @item_combinations = []
       find_combinations(target_price, [])
 
-      @item_combinations.empty?
+      if @item_combinations.empty?
         @item_combinations = "No combinations of items that add up to your target price were found"
       end
     end
